@@ -1,0 +1,5 @@
+<!-- welcome.wxml -->
+<view class='container'>
+  <image class='user_image' src='/images/000.jpg'></image>
+  
+</view>
