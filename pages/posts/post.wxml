@@ -10,7 +10,9 @@
 
   <block wx:for="{{post_key}}" wx:key>
     <!-- 模板复用 -->
-    <template is="postItem" data="{{item}}" />
+    <view catchtap="onpostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}"/>
+    </view>
     <!-- <view class='post-container'>
       <view class='post-author-date'>
         <image src='{{item.avatar}}'></image>
