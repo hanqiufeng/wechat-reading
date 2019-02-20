@@ -15,13 +15,6 @@ Page({
     })
   },
 
-  onUnload:function(){
-    // console.log("onUnload")
-  },
-
-  onHide:function(){
-    // console.log("onHide")
-  }
 })
 
 
