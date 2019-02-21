@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/welcome/welcome",
     "pages/posts/post",
     "pages/posts/post-detail/post-detail",
+    "pages/welcome/welcome",
     "pages/reader/reader"
   ],
   "window": {
@@ -10,5 +10,6 @@
     "navigationBarBackgroundColor": "#405f80",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "requiredBackgroundModes":["audio"]
 }
