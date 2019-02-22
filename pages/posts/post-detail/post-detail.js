@@ -1,4 +1,5 @@
 var postsData = require("../../../data/posts-data.js")
+var app = getApp();
 
 Page({
   data: {
@@ -9,6 +10,7 @@ Page({
   },
 
   onLoad: function(options) {
+    var globalData = app.globalData;
     var postId = options.id;
     this.data.currentPostId = postId;
 
@@ -37,6 +39,33 @@ Page({
       wx.setStorageSync('posts_collected', postsCollected);
       wx.setStorageSync('posts_share', postsShare);
     }
+
+    if (app.globalData.g_isPlayingMuisc && app.globalData.g_currentMusicPostId == postId) {
+      // this.data.isPlayingMusic = true
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+    this.setMusicMonitor();
+  },
+
+  setMusicMonitor: function() {
+    // 监听全局音乐播放事件
+    var that = this;
+    wx.onBackgroundAudioPlay(function() {
+      that.setData({
+        isPlayingMusic: true
+      })
+      app.globalData.g_isPlayingMuisc = true;
+      app.globalData.g_currentMusicPostId = that.data.currentPostId;
+    });
+    wx.onBackgroundAudioPause(function() {
+      that.setData({
+        isPlayingMusic: false
+      })
+      app.globalData.g_isPlayingMuisc = false;
+      app.globalData.g_currentMusicPostId = null;
+    })
   },
 
   onCollectTap: function(event) {
@@ -156,7 +185,7 @@ Page({
         coverImgUrl: postData.music.coverImg,
       })
       this.setData({
-        isPlayingMusic:true
+        isPlayingMusic: true
       })
     }
   },

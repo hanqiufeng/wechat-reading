@@ -3,9 +3,9 @@ var postsData = require("../../data/posts-data.js")
 Page({
   data: {
     images: [
-      {src: "/images/wx.png"},
-      {src: "/images/vr.png"},
-      {src: "/images/iqiyi.png"}
+      { src: "/images/wx.png", postId:"3"},
+      { src: "/images/vr.png", postId: "4"},
+      { src: "/images/iqiyi.png", postId: "5"}
     ],
     indicatorDots: true, // 是否显示面板指示点
     autoplay: true, // 是否自动切换
@@ -22,6 +22,16 @@ Page({
     this.setData({
       post_key: postsData.postList
     });
+  },
+
+  onImageTap:function(event){
+    console.log(event);
+    return;
+    var postId = event.currentTarget.dataset.postid;
+    // console.log(postId);
+    wx.navigateTo({
+      url: './post-detail/post-detail?id=' + postId
+    })
   },
 
   onpostTap:function(event){

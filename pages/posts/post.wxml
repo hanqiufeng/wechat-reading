@@ -4,7 +4,7 @@
 <view>
   <swiper indicator-dots='{{indicatorDots}}' autoplay='{{autoplay}}' interval='{{interval}}' duration='{{duration}}'>
     <swiper-item wx:for="{{images}}" wx:key>
-      <image src="{{item.src}}"></image>
+      <image src="{{item.src}}" data-postId="{{item.postId}}" catchtap="onImageTap" ></image>
     </swiper-item>
   </swiper>
 

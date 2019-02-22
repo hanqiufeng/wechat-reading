@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/movies/movies",
+    "pages/welcome/welcome",
+
     "pages/posts/post",
     "pages/posts/post-detail/post-detail",
-    "pages/welcome/welcome",
+
     "pages/reader/reader"
   ],
   "window": {
@@ -11,5 +14,30 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "requiredBackgroundModes":["audio"]
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "tabBar": {
+    "borderStyle":"white",
+    "list":[
+      {
+        "pagePath": "pages/welcome/welcome",
+        "text": "首页",
+        "iconPath":"/images/tab/ciwei.png",
+        "selectedIconPath":"/images/tab/ciwei_hl.png"
+      },
+      {
+        "pagePath":"pages/posts/post",
+        "text":"阅读",
+        "iconPath": "/images/tab/yuedu.png",
+        "selectedIconPath": "/images/tab/yuedu_hl.png"
+      },
+      {
+        "pagePath":"pages/movies/movies",
+        "text":"电影",
+        "iconPath": "/images/tab/dianying.png",
+        "selectedIconPath": "/images/tab/dianying_hl.png"
+      }
+    ]
+  }
 }
