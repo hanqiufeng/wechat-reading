@@ -1,8 +1,26 @@
 <!--pages/movies/movies.wxml-->
 <import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml" />
 
-<view>
-  <template is="movieListTemplate" />
-  <template is="movieListTemplate" />
-  <template is="movieListTemplate" />
+<view class='search'>
+  <icon class='search-img' type='search' size='13' color='#405f80'></icon>
+  <input value='' type='text' placeholder='流浪地球、阿丽塔：战斗...' placeholder-class='placeholder' bindfocus='onBindFocus' bindconfirm='onBindChange' />
+  <image wx:if="{{searchPanelShow}}" class='xx-img' src='/images/icon/xx.png' bindtap='onCancelImgTap'></image>
+</view>
+
+<view class='movie_container' wx:if="{{containerShow}}">
+  <view class="movies_container">
+    <template is="movieListTemplate" data="{{...inTheaters}}" />
+  </view>
+  <view class="movies_container">
+    <template is="movieListTemplate" data="{{...comingSoon}}" />
+  </view>
+  <view class="movies_container">
+    <template is="movieListTemplate" data="{{...top250}}" />
+  </view>
+</view>
+
+<view class='search-panel' wx-if="{{searchPanelShow}}">
+  <!-- <template is="movieGridTemplate" data="{{movies:searchResult.movies}}"/> -->
+  <template is="movieGridTemplate" data="{{...searchResult}}" />
 </view>

@@ -42,4 +42,5 @@
 .movies-container {
   display: flex;
   flex-direction:row;
+  background-color: #fff;
 }

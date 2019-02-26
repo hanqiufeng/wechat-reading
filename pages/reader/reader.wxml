@@ -3,3 +3,27 @@
   <image class='user_image' src='/images/000.jpg'></image>
   
 </view>
+
+<view wx:for="{{words}}" wx:key class="item-container">
+
+  <view class="items">
+
+    <view class="left">
+
+       <view class="msg">{{item.message}}</view>
+
+       <view class="time">{{item.time}}</view>
+
+    </view>
+
+    <view class="right">{{item.greeting}}</view>
+
+  </view>
+
+</view>
+
+<view class="refresh-block" wx:if="{{loading}}">
+
+ <image animation="{{refreshAnimation}}" src="../../images/loading.gif"></image>
+
+</view>

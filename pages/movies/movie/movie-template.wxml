@@ -3,8 +3,8 @@
 
 <template name='movieTemplate'>
   <view class='movie-container'>
-    <image class='movie-img' src='/images/000.jpg'></image>
-    <text class='movie-title'>流浪地球</text>
-    <template is="starsTemplate"></template>
+    <image class='movie-img' src='{{coverageUrl}}'></image>
+    <text class='movie-title'>{{title}}</text>
+    <template is="starsTemplate" data="{{stars:stars,score:average}}"></template>
   </view>
 </template>

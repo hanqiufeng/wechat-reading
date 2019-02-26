@@ -1,13 +1,15 @@
 <template name="starsTemplate">
   <view class='stars-container'>
     <view class='stars'>
-      <image src='/images/icon/chat.png'></image>
-      <image src='/images/icon/chat.png'></image>
-      <image src='/images/icon/chat.png'></image>
-      <image src='/images/icon/chat.png'></image>
-      <!-- <image src='/images/icon/chat.png'></image> -->
-      <image src='/images/icon/star.png'></image>
+      <block wx:for="{{stars}}" wx:for-item="i" wx:key>
+        <!-- <image src="{{i==1?'/images/icon/star.png':'/images/icon/chat.png'}}" /> -->
+        <image wx:if="{{i}}" src='/images/icon/star.png' />
+        <image wx:else src='/images/icon/chat.png' />
+        <!-- <image wx:if="{{i==1}}" src='/images/icon/star.png' />
+        <image wx:elif="{{i==2}}" src='/images/icon/star.png' />
+        <image wx:else src='/images/icon/chat.png' /> -->
+      </block>
     </view>
-    <text class='star-score'>8.9</text>
+    <text class='star-score'>{{score}}</text>
   </view>
 </template>
