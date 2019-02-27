@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/movies/movies",
     "pages/movies/more-movie/more-movie",
-    "pages/welcome/welcome",
+    "pages/movies/movie-detail/movie-detail",
     "pages/posts/post",
     "pages/posts/post-detail/post-detail",
     "pages/reader/reader"
@@ -22,20 +23,20 @@
       {
         "pagePath": "pages/welcome/welcome",
         "text": "首页",
-        "iconPath": "/images/tab/ciwei.png",
-        "selectedIconPath": "/images/tab/ciwei_hl.png"
+        "iconPath": "images/tab/ciwei.png",
+        "selectedIconPath": "images/tab/ciwei_hl.png"
       },
       {
         "pagePath": "pages/posts/post",
         "text": "阅读",
-        "iconPath": "/images/tab/yuedu.png",
-        "selectedIconPath": "/images/tab/yuedu_hl.png"
+        "iconPath": "images/tab/yuedu.png",
+        "selectedIconPath": "images/tab/yuedu_hl.png"
       },
       {
         "pagePath": "pages/movies/movies",
         "text": "电影",
-        "iconPath": "/images/tab/dianying.png",
-        "selectedIconPath": "/images/tab/dianying_hl.png"
+        "iconPath": "images/tab/dianying.png",
+        "selectedIconPath": "images/tab/dianying_hl.png"
       }
     ]
   }
