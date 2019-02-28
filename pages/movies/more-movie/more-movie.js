@@ -47,6 +47,7 @@ Page({
       "?star=0&count=20";
     this.data.movies = {};
     this.data.isEmpty = true;
+    this.data.totalCount = 0;
     util.http(refreshUrl, this.processDoubanData);
     wx.showNavigationBarLoading();
     wx.stopPullDownRefresh();
@@ -62,7 +63,7 @@ Page({
         title = title.substring(0, 6) + "...";
       }
       var temp = {
-        stars: util.converToStartsArray(subject.rating.stars),
+        stars: util.convertToStarsArray(subject.rating.stars),
         title: title,
         average: subject.rating.average,
         coverageUrl: subject.images.large,
@@ -97,12 +98,11 @@ Page({
     })
   },
 
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
+  onMovieTap: function (event) {
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../movie-detail/movie-detail?id=' + movieId
+    })
   },
 
 })
