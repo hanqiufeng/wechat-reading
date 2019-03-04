@@ -32,17 +32,23 @@ Page({
   },
 
   // 上滑加载
-  onScrollLower: function(event) {
-    console.log("加载更多" + new Date());
+  // onScrollLower: function(event) {
+  //   console.log("加载更多" + new Date());
+  //   var nextUrl = this.data.requestUrl +
+  //     "?start=" + this.data.totalCount + "&count=20";
+  //   util.http(nextUrl, this.processDoubanData);
+  //   wx.showNavigationBarLoading()
+  // },
+  onReachBottom: function(event) {
     var nextUrl = this.data.requestUrl +
       "?start=" + this.data.totalCount + "&count=20";
-    util.http(nextUrl, this.processDoubanData);
+    util.http(nextUrl, this.processDoubanData)
     wx.showNavigationBarLoading()
   },
 
   // 下拉刷新
   onPullDownRefresh: function() {
-    console.log("下拉刷新"+new Date());
+    console.log("下拉刷新" + new Date());
     var refreshUrl = this.data.requestUrl +
       "?star=0&count=20";
     this.data.movies = {};
@@ -98,7 +104,7 @@ Page({
     })
   },
 
-  onMovieTap: function (event) {
+  onMovieTap: function(event) {
     var movieId = event.currentTarget.dataset.movieid;
     wx.navigateTo({
       url: '../movie-detail/movie-detail?id=' + movieId

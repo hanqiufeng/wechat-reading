@@ -5,4 +5,6 @@
   <view class='moto_container' bindtap='onTap'>
     <text class='moto'>开启小程序之旅</text>
   </view>
+
+  <view style='margin-top:20rpx;' catchtap="scanQRCode">二维码扫描</view>
 </view>
