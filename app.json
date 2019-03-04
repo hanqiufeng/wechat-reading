@@ -19,13 +19,8 @@
   ],
   "tabBar": {
     "borderStyle": "white",
+    "position": "bottom",
     "list": [
-      {
-        "pagePath": "pages/welcome/welcome",
-        "text": "首页",
-        "iconPath": "images/tab/ciwei.png",
-        "selectedIconPath": "images/tab/ciwei_hl.png"
-      },
       {
         "pagePath": "pages/posts/post",
         "text": "阅读",
